@@ -12,6 +12,10 @@ import TrackListScreen from './src/screens/TrackListScreen';
 
 // lowercase = grouping of other screens (a flow)
 // nested navigator set up
+// the switch navigator is instantanious
+// the main flow will have a bottom tab navigation
+// the bottom nav will contain the following links
+// trackListFlow, TrackCreate, Account
 const switchNavigator = createSwitchNavigator({
   loginFlow: createStackNavigator({
     Signup: SignupScreen,
