@@ -10,6 +10,7 @@ import TrackCreateScreen from './src/screens/TrackCreateScreen';
 import TrackDetailScreen from './src/screens/TrackDetailScreen';
 import TrackListScreen from './src/screens/TrackListScreen';
 import { Provider as AuthProvider } from './src/context/AuthContext';
+import { setNavigator } from './src/navigationRef';
 // lowercase = grouping of other screens (a flow)
 // nested navigator set up
 // the switch navigator is instantanious
@@ -37,7 +38,8 @@ const App = createAppContainer(switchNavigator);
 export default () => {
   return (
     <AuthProvider>
-      <App />
+      {/* let's us hook into the navigator */}
+      <App ref={(navigator) => setNavigator(navigator)} />
     </AuthProvider>
   );
 };

@@ -2,6 +2,7 @@ import createDataContext from './createDataContext';
 import trackerApi from '../api/tracker';
 // AS is depricated but not yet compatible with expo
 import { AsyncStorage } from 'react-native';
+import { navigate } from '../navigationRef';
 
 const ADD_ERROR = 'ADD_ERROR';
 const SIGN_UP = 'SIGN_UP';
@@ -24,6 +25,8 @@ const signup = dispatch => async ({ email, password }) => {
         await AsyncStorage.setItem('token', response.data.token);
         dispatch({ type: SIGN_UP, payload: response.data.token });
 
+        // navigate to main flow
+        navigate('TrackList');
     } catch (err) {
         dispatch({ type: ADD_ERROR, payload: 'Something went wrong with sign up' })
 
