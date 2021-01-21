@@ -19,7 +19,7 @@ const SignupScreen = ({ navigation }) => {
                     value={email}
                     onChangeText={setEmail}
                     autoCapitalize="none"
-                    autoCapitalize={false}
+                    autoCorrect={false}
                 />
             </Spacer>
             <Spacer>
@@ -28,7 +28,7 @@ const SignupScreen = ({ navigation }) => {
                     value={password}
                     onChangeText={setPassword}
                     autoCapitalize="none"
-                    autoCapitalize={false}
+                    autoCorrect={false}
                     secureTextEntry
                 />
             </Spacer>

@@ -9,7 +9,7 @@ import SignupScreen from './src/screens/SignupScreen';
 import TrackCreateScreen from './src/screens/TrackCreateScreen';
 import TrackDetailScreen from './src/screens/TrackDetailScreen';
 import TrackListScreen from './src/screens/TrackListScreen';
-
+import { Provider as AuthProvider } from './src/context/AuthContext';
 // lowercase = grouping of other screens (a flow)
 // nested navigator set up
 // the switch navigator is instantanious
@@ -32,4 +32,12 @@ const switchNavigator = createSwitchNavigator({
 
 });
 
-export default createAppContainer(switchNavigator);
+const App = createAppContainer(switchNavigator);
+
+export default () => {
+  return (
+    <AuthProvider>
+      <App />
+    </AuthProvider>
+  );
+};
