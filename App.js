@@ -11,13 +11,18 @@ import TrackDetailScreen from './src/screens/TrackDetailScreen';
 import TrackListScreen from './src/screens/TrackListScreen';
 import { Provider as AuthProvider } from './src/context/AuthContext';
 import { setNavigator } from './src/navigationRef';
+import ResolveAuthScreen from './src/screens/ResolveAuthScreen';
+
 // lowercase = grouping of other screens (a flow)
 // nested navigator set up
 // the switch navigator is instantanious
 // the main flow will have a bottom tab navigation
 // the bottom nav will contain the following links
 // trackListFlow, TrackCreate, Account
+
+//ResolveAuth is listed first so it will be displayed first by default
 const switchNavigator = createSwitchNavigator({
+  ResolveAuth: ResolveAuthScreen,
   loginFlow: createStackNavigator({
     Signup: SignupScreen,
     Signin: SigninScreen
